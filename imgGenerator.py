@@ -4,15 +4,17 @@ from time import time
 
 # base variables
 
-size = 100
+size = 200
 resolution = 10
 num = int(size / resolution)
 grid = []
 
-# generating a random grid
+
 t = time()
+# generating a random grid
 
 grid = [[randrange(0, 2) for i in range(0, num)] for j in range(0, num)]
+
 # set up the drawing
 
 img = Image.new('RGB', (size, size), 'white')
@@ -32,4 +34,7 @@ for i in range(0, num):
 filename = "pil_img.png"
 img.save(filename)
 
-print(time() - t)
+# img.show()
+
+print("time : " + str(round((time() - t)*1000)) + "ms")
+
